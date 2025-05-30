@@ -186,4 +186,9 @@ interface Todos{
 }
 
 // getting elements from html
-
+const user = document.getElementById("users") as HTMLSelectElement;
+const post =  document.getElementById("posts") as HTMLSelectElement;
+const comment = document.getElementById("comments") as HTMLSelectElement;
+const quote =  document.getElementById("quotes") as HTMLSelectElement;
+const cart = document.getElementById("carts") as HTMLSelectElement;
+const todo = document.getElementById("todos") as HTMLSelectElement
