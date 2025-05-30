@@ -138,7 +138,8 @@ interface Products{
      thumbnail: string
 }
 
-interface posts{
+// https://dummyjson.com/posts
+interface Posts{
     id: number,
     title:string,
     body: string,
@@ -155,3 +156,34 @@ interface posts{
     userId: string
     
 }
+
+// https://dummyjson.com/comments
+interface Comments{
+    id:number,
+    body: string,
+    postId:number,
+    likes: number,
+    user: {
+        id: number,
+        username: string,
+        fullName: string
+    }
+}
+
+// https://dummyjson.com/quotes
+interface Quotes{
+    id: number,
+    quote:string,
+    author: string
+}
+
+// https://dummyjson.com/todos
+interface Todos{
+    id: number,
+    todo: string,
+    completed: boolean,
+    userId: number
+}
+
+// getting elements from html
+
