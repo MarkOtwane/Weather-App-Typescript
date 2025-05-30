@@ -186,9 +186,29 @@ interface Todos{
 }
 
 // getting elements from html
-const user = document.getElementById("users") as HTMLSelectElement;
+const userSec = document.getElementById("users") as HTMLSelectElement;
 const post =  document.getElementById("posts") as HTMLSelectElement;
 const comment = document.getElementById("comments") as HTMLSelectElement;
 const quote =  document.getElementById("quotes") as HTMLSelectElement;
 const cart = document.getElementById("carts") as HTMLSelectElement;
 const todo = document.getElementById("todos") as HTMLSelectElement
+
+// function for users 
+let userAPI: Users[];
+
+const fetchUsers = async ()=>{
+    const userapi = await fetch('https://dummyjson.com/users');
+
+    if(userapi.ok){
+        userSec.innerHTML = ''
+        userAPI = await userapi.json();
+        userAPI.forEach((user) =>{
+            // <!-- userName, image, company(name, address(city));
+            const userDiv = document.createElement('div');
+            userDiv.textContent = `${user.username} ${user.image} ${user.company.name} ${user.address.city}`;
+            userSec.appendChild(userDiv)
+        });
+    }
+}
+
+fetchUsers()
